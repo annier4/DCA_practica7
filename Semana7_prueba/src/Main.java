@@ -3,20 +3,28 @@ import processing.core.PApplet;
 public class Main extends PApplet{
 
 	public static void main(String[] args) {
-		
-		// TODO Auto-generated method stub
-		// annie rojas estuvo aquí
-
 		PApplet.main("Main");
-		
 	}
 	
 	static PApplet app;
+	Logica log;
 	
 	
 	
 	public void settings() {
+		size(1200,700);
 	
+	}
+	
+	public void setup() {
+		app = this;
+		log = new Logica();
+		
+	
+	}
+	
+	public void draw() {
+		background(255);
 	}
 
 }
