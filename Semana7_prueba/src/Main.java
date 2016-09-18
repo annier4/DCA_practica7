@@ -13,13 +13,11 @@ public class Main extends PApplet{
 	
 	public void settings() {
 		size(1200,700);
-		//annie rojas
 	}
 	
 	public void setup() {
 		app = this;
 		log = new Logica();
-		
 	
 	}
 	
