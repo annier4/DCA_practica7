@@ -5,12 +5,15 @@ import processing.core.PImage;
 
 public class Logica {
 	
-	PApplet app = new PApplet();	
+	PApplet app = new PApplet();
+	PImage fondo;
 	String ruta = "data/images/";
 	ArrayList<String> exts;
 	ArrayList<String> images;
 	
 	public Logica() {
+		//fondo = app.loadImage("../data/fondo.png");
+		
 		this.exts =  new ArrayList<>();
 		exts.add(".png");
 		exts.add(".jpg");
@@ -25,7 +28,9 @@ public class Logica {
 		}
 	}
 	
-	public void pintar() {
+	public void pintar(PApplet app) {
+		//app.image(fondo,0,0);
+		
 		System.out.println(images.size());
 		for (int i = 0; i < images.size(); i++) {
 			String name = "../"+ruta+images.get(i);
