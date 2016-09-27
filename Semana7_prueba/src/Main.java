@@ -20,7 +20,7 @@ public class Main extends PApplet{
 	}
 	
 	public void draw() {
-		background(255);
+		background(0);
 		log.pintar(this);
 	}
 

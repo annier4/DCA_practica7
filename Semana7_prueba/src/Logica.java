@@ -7,12 +7,16 @@ public class Logica {
 	
 	PApplet app = new PApplet();
 	PImage fondo;
+	PImage herramientas;
+	PImage zoomOut;
 	String ruta = "data/images/";
 	ArrayList<String> exts;
 	ArrayList<String> images;
 	
 	public Logica() {
 		//fondo = app.loadImage("../data/fondo.png");
+		//herramientas = app.loadImage("../data/herramientas.png");
+		//zoomOut = app.loadImage("../data/herramientas.png");
 		
 		this.exts =  new ArrayList<>();
 		exts.add(".png");
