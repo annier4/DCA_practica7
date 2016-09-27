@@ -1,25 +1,38 @@
+import processing.core.PApplet;
 import java.io.File;
 import java.util.ArrayList;
-
-import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Logica {
 	
-	PApplet app = Main.app;	
+	PApplet app = new PApplet();	
 	String ruta = "data/images/";
+	ArrayList<String> exts;
+	ArrayList<String> images;
 	
 	public Logica() {
-
-		ArrayList<String> exts =  new ArrayList<>();
+		this.exts =  new ArrayList<>();
 		exts.add(".png");
 		exts.add(".jpg");
-		exts.add(".bmp");		
+		exts.add(".bmp");
+		this.images = new ArrayList<String>();
 		File carpeta = new File(ruta);
 		String[] nombres = carpeta.list(new MiFiltroDeNombres(exts));
 		
 		for (int i = 0; i < nombres.length; i++) {
 			System.out.println(nombres[i]);
+			images.add(nombres[i]);
 		}
-		
+	}
+	
+	public void pintar() {
+		System.out.println(images.size());
+		for (int i = 0; i < images.size(); i++) {
+			String name = "../"+ruta+images.get(i);
+			//PImage imgN = app.loadImage(name);
+			//app.image(imgN, 0, 0);
+			app.fill(0);
+			//app.text(images.get(i), 20, 10+(50*i));
+		}
 	}
 }

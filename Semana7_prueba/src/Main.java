@@ -9,8 +9,6 @@ public class Main extends PApplet{
 	static PApplet app;
 	Logica log;
 	
-	
-	
 	public void settings() {
 		size(1200,700);
 	}
@@ -23,6 +21,7 @@ public class Main extends PApplet{
 	
 	public void draw() {
 		background(255);
+		log.pintar();
 	}
 
 }
