@@ -21,7 +21,7 @@ public class Main extends PApplet{
 	
 	public void draw() {
 		background(0);
-		log.pintar(this);
+		log.pintar();
 	}
 
 }
