@@ -51,7 +51,6 @@ public class Logica {
 //			app.fill(0);
 //			app.text(images.get(i), 20, 10+(50*i));
 //		}
-		
 		System.out.println("x= "+app.mouseX + "y= "+app.mouseY);
 	}
 }
