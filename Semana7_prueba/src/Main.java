@@ -15,7 +15,7 @@ public class Main extends PApplet{
 	
 	public void setup() {
 		app = this;
-		log = new Logica();
+		log = new Logica(app);
 	
 	}
 	

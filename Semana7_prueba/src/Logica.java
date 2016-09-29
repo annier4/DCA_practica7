@@ -5,43 +5,42 @@ import processing.core.PImage;
 
 public class Logica {
 	
-	PApplet app = new PApplet();
+	PApplet app;
 	PImage fondo;
 	PImage herramientas;
 	PImage zoomOut;
+	
 	String ruta = "data/images/";
 	ArrayList<String> exts;
-	ArrayList<String> images;
+	ArrayList<Imagen> imagenes;
 	
-	public Logica() {
-		//fondo = app.loadImage("../data/fondo.png");
-		//herramientas = app.loadImage("../data/herramientas.png");
-		//zoomOut = app.loadImage("../data/herramientas.png");
+	public Logica(PApplet app) {
+		this.app = app;
+		
+		fondo = app.loadImage("../data/fondo.png");
+		herramientas = app.loadImage("../data/herramientas.png");
+		zoomOut = app.loadImage("../data/herramientas.png");
 		
 		this.exts =  new ArrayList<>();
 		exts.add(".png");
 		exts.add(".jpg");
 		exts.add(".bmp");
-		this.images = new ArrayList<String>();
+		this.imagenes = new ArrayList<Imagen>();
 		File carpeta = new File(ruta);
 		String[] nombres = carpeta.list(new MiFiltroDeNombres(exts));
 		
 		for (int i = 0; i < nombres.length; i++) {
-			System.out.println(nombres[i]);
-			images.add(nombres[i]);
+			imagenes.add(new Imagen(app, 350, 100, ruta, nombres[i]));
 		}
 	}
 	
-	public void pintar(PApplet app) {
-		//app.image(fondo,0,0);
+	public void pintar(PApplet app) { 
+		app.image(fondo,0,0);
 		
-		System.out.println(images.size());
-		for (int i = 0; i < images.size(); i++) {
-			String name = "../"+ruta+images.get(i);
-			//PImage imgN = app.loadImage(name);
-			//app.image(imgN, 0, 0);
-			app.fill(0);
-			//app.text(images.get(i), 20, 10+(50*i));
+		for (int i = 0; i < imagenes.size(); i++) {
+			imagenes.get(i).pintar(app);
+			app.fill(255);
+			app.text(imagenes.get(i).getNom_img(), 20, 10+(50*i));
 		}
 	}
 }
