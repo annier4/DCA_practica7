@@ -12,16 +12,15 @@ public class Main extends PApplet{
 	public void settings() {
 		size(1200,700);
 	}
-	
 	public void setup() {
 		app = this;
 		log = new Logica(app);
-	
+
 	}
 	
 	public void draw() {
 		background(0);
-		log.pintar(this);
+		log.pintar(app);
 	}
 
 }
