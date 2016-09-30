@@ -1,13 +1,14 @@
 import processing.core.PApplet;
 
 public class Main extends PApplet{
+	
+	static PApplet app;
+	private Logica log;
 
 	public static void main(String[] args) {
 		PApplet.main("Main");
 	}
 	
-	static PApplet app;
-	Logica log;
 	
 	public void settings() {
 		size(1200,700);
@@ -19,8 +20,12 @@ public class Main extends PApplet{
 	}
 	
 	public void draw() {
-		background(0);
-		log.pintar(app);
+		background(6,6,50);
+		log.pintar();
+	}
+	
+	public void mouseClicked(){
+		log.click();
 	}
 
 }
